@@ -1,0 +1,6 @@
+verilog work "async.v"
+verilog work "serial_interface.v"
+verilog work "ipcore_dir/cross_clock.v"
+verilog work "lx9board_main.v"
+verilog work "tb_lx9board_main.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

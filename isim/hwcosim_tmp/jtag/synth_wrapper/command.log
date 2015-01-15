@@ -1,0 +1,2 @@
+ngcbuild -sd C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/isim/hwcosim_tmp/jtag/synth_model -sd C:/Users/hjy/Desktop/FPGA-HJY/serial_ise -sd C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/ipcore_dir lx9board_main lx9board_main.ngc
+xst -ifn xst_hwcosim_top.scr

@@ -1,0 +1,20 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Wed Nov 26 08:19:28 2014
+
+drc -z hwcosim_top.ncd hwcosim_top.pcf
+
+WARNING:PhysDesignRules:367 - The signal
+   <hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/
+   gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal
+   <hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/g
+   ntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1_O> is incomplete. The signal
+   does not drive any load pins in the design.
+INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM comp hwcosim_clkgen_dcm,
+   consult the device Data Sheet.
+DRC detected 0 errors and 2 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

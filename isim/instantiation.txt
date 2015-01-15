@@ -1,0 +1,44 @@
+===
+lx9board_main	verilog	lx9example_tb/uut
+---
+clk_40mhz	in			
+reset_i	in			
+rxd	in			
+txd	out			
+GPIO_LED1	out			
+GPIO_LED2	out			
+GPIO_LED3	out			
+GPIO_LED4	out			
+tb_clk	in			
+rst_out	out			
+rst_out_ack	in			
+tb_led	in			
+cmdfifo_txdata	in	7	0	
+cmdfifo_rxdata	out	7	0	
+cmdfifo_rxe	out			
+cmdfifo_txf	out			
+cmdfifo_rd	in			
+cmdfifo_wr	in			
+---
+===
+lx9board_main	verilog	lx9example_tb/uut
+---
+clk_40mhz	in			
+reset_i	in			
+rxd	in			
+txd	out			
+GPIO_LED1	out			
+GPIO_LED2	out			
+GPIO_LED3	out			
+GPIO_LED4	out			
+tb_clk	in			
+rst_out	out			
+rst_out_ack	in			
+tb_led	in			
+cmdfifo_txdata	in	7	0	
+cmdfifo_rxdata	out	7	0	
+cmdfifo_rxe	out			
+cmdfifo_txf	out			
+cmdfifo_rd	in			
+cmdfifo_wr	in			
+---

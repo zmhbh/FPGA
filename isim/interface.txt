@@ -1,0 +1,105 @@
+===
+async_transmitter	verilog
+---
+clk	in			
+TxD_start	in			
+TxD_data	in	7	0	
+TxD	out			
+TxD_busy	out			
+---
+ClkFrequency				signed	40000000	parameter
+Baud				signed	9600	parameter
+===
+async_receiver	verilog
+---
+clk	in			
+RxD	in			
+RxD_data_ready	out			
+RxD_data	out	7	0	
+RxD_idle	out			
+RxD_endofpacket	out			
+---
+ClkFrequency				signed	40000000	parameter
+Baud				signed	9600	parameter
+Oversampling				signed	8	parameter
+l2o				signed	log2(Oversampling)	localparam
+===
+BaudTickGen	verilog
+---
+clk	in			
+enable	in			
+tick	out			
+---
+ClkFrequency				signed	25000000	parameter
+Baud				signed	115200	parameter
+Oversampling				signed	1	parameter
+AccWidth				signed	(log2((ClkFrequency / Baud)) + 8)	localparam
+ShiftLimiter				signed	log2(((Baud * Oversampling) >> (31 - AccWidth)))	localparam
+Inc				signed	((((Baud * Oversampling) << (AccWidth - ShiftLimiter)) + (ClkFrequency >> (ShiftLimiter + 1))) / (ClkFrequency >> ShiftLimiter))	localparam
+===
+serial_reg_iface	verilog
+---
+reset_i	in			
+clk_i	in			
+rx_i	in			
+tx_o	out			
+cmdfifo_txf	out			
+cmdfifo_wr	in			
+cmdfifo_dtx	in	7	0	
+cmdfifo_rxe	out			
+cmdfifo_rd	in			
+cmdfifo_drx	out	7	0	
+---
+===
+cross_clock	verilog
+---
+rst	in			
+wr_clk	in			
+rd_clk	in			
+din	in	7	0	
+wr_en	in			
+rd_en	in			
+dout	out	7	0	
+full	out			
+empty	out			
+---
+===
+lx9board_main	verilog
+---
+clk_40mhz	in			
+reset_i	in			
+rxd	in			
+txd	out			
+GPIO_LED1	out			
+GPIO_LED2	out			
+GPIO_LED3	out			
+GPIO_LED4	out			
+tb_clk	in			
+rst_out	out			
+rst_out_ack	in			
+tb_led	in			
+cmdfifo_txdata	in	7	0	
+cmdfifo_rxdata	out	7	0	
+cmdfifo_rxe	out			
+cmdfifo_txf	out			
+cmdfifo_rd	in			
+cmdfifo_wr	in			
+---
+===
+lx9example_tb	verilog
+---
+---
+N				signed	6	parameter
+s0	2	0			3'b111	parameter
+s1	2	0			3'b01	parameter
+s2	2	0			3'b010	parameter
+s3	2	0			3'b011	parameter
+s4	2	0			3'b100	parameter
+s5	2	0			3'b101	parameter
+s6	2	0			3'b110	parameter
+===
+glbl	verilog
+---
+---
+ROC_WIDTH				signed	100000	parameter
+TOC_WIDTH				signed	0	parameter

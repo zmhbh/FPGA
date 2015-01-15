@@ -1,0 +1,4 @@
+verilog work "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v"
+verilog work "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/ipcore_dir/cross_clock.v"
+verilog work "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/lx9board_main.v"
+verilog work "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/serial_interface.v"

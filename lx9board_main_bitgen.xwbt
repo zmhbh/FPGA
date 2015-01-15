@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\E\Documents\fpga\cc_projects\2013_Oct\avnet_lx9\serial_ise\lx9board_main.ncd
+OUTFILE=C:\E\Documents\fpga\cc_projects\2013_Oct\avnet_lx9\serial_ise\lx9board_main.bit
+FAMILY=Spartan6
+PART=xc6slx9-2csg324
+WORKINGDIR=C:\E\Documents\fpga\cc_projects\2013_Oct\avnet_lx9\serial_ise
+LICENSE=WebPack
+USER_INFO=175932843_1777488603_210550451_605

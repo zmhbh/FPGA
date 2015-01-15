@@ -1,0 +1,30 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/lx9example_tb_isim_beh.exe -prj C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/lx9example_tb_beh.prj -hwcosim_instance /lx9example_tb/uut -hwcosim_clock tb_clk -hwcosim_board lx9-jtag work.lx9example_tb work.glbl -hwcosim_constraints Avt_S6LX9_MicroBoard_UCF_110804.ucf 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v" into library work
+Analyzing Verilog file "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/serial_interface.v" into library work
+Analyzing Verilog file "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/ipcore_dir/cross_clock.v" into library work
+Analyzing Verilog file "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/lx9board_main.v" into library work
+Analyzing Verilog file "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/tb_lx9board_main.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1330 - "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v" Line 166: Function log2 has no return value assignment
+WARNING:HDLCompiler:1330 - "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v" Line 116: Function log2 has no return value assignment
+WARNING:HDLCompiler:1016 - "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/tb_lx9board_main.v" Line 62: Port clk_40mhz is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/serial_interface.v" Line 74: Port RxD_idle is not connected to this instance
+WARNING:HDLCompiler:1330 - "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v" Line 166: Function log2 has no return value assignment
+Completed static elaboration
+Compiling module lx9board_main
+Compiling module lx9example_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 2 Verilog Units
+Built simulation executable C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/lx9example_tb_isim_beh.exe
+Launching the HDL wrapper and bitstream generation process. Running :
+hwcosim_compile.exe --board lx9-jtag -s isim/hwcosim.spec -w isim/hwcosim_tmp -o isim/  --project "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/lx9example_tb_beh.prj" --instance lx9example_tb/uut --clock tb_clk --constraints Avt_S6LX9_MicroBoard_UCF_110804.ucf  --flow isim
+Finished HDL wrapper and bitstream generation process.
+Fuse Memory Usage: 30520 KB
+Fuse CPU Usage: 499 ms

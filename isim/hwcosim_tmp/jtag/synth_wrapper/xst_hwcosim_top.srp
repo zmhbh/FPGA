@@ -1,0 +1,619 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input Format                       : MIXED
+Input File Name                    : "xst_hwcosim_top.prj"
+
+---- Target Parameters
+Output Format                      : ngc
+Output File Name                   : "hwcosim_top"
+Target Device                      : xc6slx9
+
+---- Source Options
+Top Module Name                    : hwcosim_top
+
+---- Target Options
+Add IO Buffers                     : YES
+
+---- General Options
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Cross Clock Analysis               : YES
+Global Optimization                : AllClockNets
+Hierarchy Separator                : /
+Optimization Effort                : 2
+Optimization Goal                  : SPEED
+Write Timing Constraints           : YES
+
+---- Other Options
+report_timing_constraint_problems  : warning
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_interface.v" into library work
+Parsing module <hwcosim_shared_memory_lock_manager>.
+Parsing module <hwcosim_shared_register>.
+Parsing module <hwcosim_memory_map>.
+Parsing module <hwcosim_interface>.
+Parsing module <lx9board_main>.
+Analyzing Verilog file "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_top.v" into library work
+Parsing module <hwcosim_top>.
+Parsing module <jtagcosim_iface_spartan6>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <hwcosim_top>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <DCM(CLKFX_MULTIPLY=2,CLKFX_DIVIDE=10,DFS_FREQUENCY_MODE="LOW",DLL_FREQUENCY_MODE="LOW",CLKIN_PERIOD=10.0,CLKIN_DIVIDE_BY_2="FALSE",CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",PHASE_SHIFT=0)>.
+WARNING:HDLCompiler:1127 - "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_top.v" Line 117: Assignment to hwcosim_clkgen_dcm_clk2x ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_top.v" Line 120: Assignment to hwcosim_clkgen_dcm_clkdv ignored, since the identifier is never used
+
+Elaborating module <BUFGCE>.
+
+Elaborating module <BUFG>.
+
+Elaborating module <BUFGMUX>.
+
+Elaborating module <hwcosim_interface>.
+
+Elaborating module <hwcosim_memory_map>.
+WARNING:HDLCompiler:1127 - "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_interface.v" Line 349: Assignment to mm_o_clk_40mhz ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_interface.v" Line 350: Assignment to mm_o_reset_i ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_interface.v" Line 351: Assignment to mm_o_rxd ignored, since the identifier is never used
+
+Elaborating module <lx9board_main>.
+WARNING:HDLCompiler:1499 - "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_interface.v" Line 424: Empty module <lx9board_main> remains a black box.
+
+Elaborating module <jtagcosim_iface_spartan6>.
+WARNING:HDLCompiler:1499 - "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_top.v" Line 197: Empty module <jtagcosim_iface_spartan6> remains a black box.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <hwcosim_top>.
+    Related source file is "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_top.v".
+WARNING:Xst - Value "1" of property "syn_noprune" is not applicable. List of valid values is "true, false, yes, no" 
+    Set property "box_type = user_black_box" for instance <cosim_core_inst>.
+    Summary:
+	no macro.
+Unit <hwcosim_top> synthesized.
+
+Synthesizing Unit <hwcosim_interface>.
+    Related source file is "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_interface.v".
+    Set property "box_type = user_black_box" for instance <hwcosim_dut_inst>.
+WARNING:Xst:647 - Input <hwcosim_sys_clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_interface.v" line 347: Output port <mm_o_clk_40mhz> of the instance <hwcosim_memory_map_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_interface.v" line 347: Output port <mm_o_reset_i> of the instance <hwcosim_memory_map_inst> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_interface.v" line 347: Output port <mm_o_rxd> of the instance <hwcosim_memory_map_inst> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <hwcosim_interface> synthesized.
+
+Synthesizing Unit <hwcosim_memory_map>.
+    Related source file is "C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\synth_wrapper\hwcosim_interface.v".
+WARNING:Xst:647 - Input <hwcosim_mm_data_in<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <hwcosim_mm_re> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <int_o_reset_i>.
+    Found 1-bit register for signal <int_o_rxd>.
+    Found 1-bit register for signal <int_o_rst_out_ack>.
+    Found 1-bit register for signal <int_o_tb_led>.
+    Found 8-bit register for signal <int_o_cmdfifo_txdata>.
+    Found 1-bit register for signal <int_o_cmdfifo_rd>.
+    Found 1-bit register for signal <int_o_cmdfifo_wr>.
+    Found 32-bit register for signal <hwcosim_mm_data_out_bank0>.
+    Found 1-bit register for signal <int_o_clk_40mhz>.
+    Summary:
+	inferred  47 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+Unit <hwcosim_memory_map> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 9
+ 1-bit register                                        : 7
+ 32-bit register                                       : 1
+ 8-bit register                                        : 1
+# Multiplexers                                         : 6
+ 32-bit 2-to-1 multiplexer                             : 6
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <lx9board_main.ngc>.
+Loading core <lx9board_main> for timing and area information for instance <hwcosim_dut_inst>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 47
+ Flip-Flops                                            : 47
+# Multiplexers                                         : 6
+ 32-bit 2-to-1 multiplexer                             : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <hwcosim_mm_data_out_bank0_31> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_30> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_29> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_28> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_27> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_26> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_25> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_24> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_23> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_22> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_21> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_20> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_19> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_18> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_17> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_16> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_15> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_14> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_13> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_12> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_11> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_10> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_9> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <hwcosim_mm_data_out_bank0_8> (without init value) has a constant value of 0 in block <hwcosim_memory_map>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:1901 - Instance hwcosim_clkgen_dcm in unit hwcosim_top of type DCM has been replaced by DCM_SP
+INFO:Xst:1901 - Instance bufgce_hwcosim_clkgen_dcm_clkfx in unit hwcosim_top of type BUFGCE has been replaced by BUFGMUX
+
+Optimizing unit <hwcosim_top> ...
+
+Optimizing unit <hwcosim_memory_map> ...
+WARNING:Xst:2677 - Node <hwcif/hwcosim_memory_map_inst/int_o_clk_40mhz> of sequential type is unconnected in block <hwcosim_top>.
+WARNING:Xst:2677 - Node <hwcif/hwcosim_memory_map_inst/int_o_rxd> of sequential type is unconnected in block <hwcosim_top>.
+WARNING:Xst:2677 - Node <hwcif/hwcosim_memory_map_inst/int_o_reset_i> of sequential type is unconnected in block <hwcosim_top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block hwcosim_top, actual ratio is 2.
+INFO:Xst:2260 - The FF/Latch <cmdfifo_serial/AT/TxD_state_FSM_FFd3> in Unit <hwcif/hwcosim_dut_inst> is equivalent to the following 2 FFs/Latches : <cmdfifo_serial/AT/TxD_state_FSM_FFd3_1> <cmdfifo_serial/AT/TxD_state_FSM_FFd3_2> 
+INFO:Xst:2260 - The FF/Latch <cmdfifo_serial/AT/TxD_state_FSM_FFd2> in Unit <hwcif/hwcosim_dut_inst> is equivalent to the following FF/Latch : <cmdfifo_serial/AT/TxD_state_FSM_FFd2_1> 
+INFO:Xst:2260 - The FF/Latch <cmdfifo_serial/AT/TxD_state_FSM_FFd1> in Unit <hwcif/hwcosim_dut_inst> is equivalent to the following FF/Latch : <cmdfifo_serial/AT/TxD_state_FSM_FFd1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <write_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <write_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <write_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <write_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <read_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <read_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <read_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <read_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <cmdfifo_serial/AT/TxD_state_FSM_FFd3> in Unit <hwcif/hwcosim_dut_inst> is equivalent to the following 2 FFs/Latches : <cmdfifo_serial/AT/TxD_state_FSM_FFd3_1> <cmdfifo_serial/AT/TxD_state_FSM_FFd3_2> 
+INFO:Xst:2260 - The FF/Latch <cmdfifo_serial/AT/TxD_state_FSM_FFd2> in Unit <hwcif/hwcosim_dut_inst> is equivalent to the following FF/Latch : <cmdfifo_serial/AT/TxD_state_FSM_FFd2_1> 
+INFO:Xst:2260 - The FF/Latch <cmdfifo_serial/AT/TxD_state_FSM_FFd1> in Unit <hwcif/hwcosim_dut_inst> is equivalent to the following FF/Latch : <cmdfifo_serial/AT/TxD_state_FSM_FFd1_1> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <write_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <write_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <write_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <write_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <read_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <read_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <read_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <read_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <write_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <write_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <write_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <write_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <read_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <read_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <read_fifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <read_fifo> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 20
+ Flip-Flops                                            : 20
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : hwcosim_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 322
+#      GND                         : 4
+#      INV                         : 30
+#      LUT1                        : 24
+#      LUT2                        : 41
+#      LUT3                        : 18
+#      LUT4                        : 52
+#      LUT5                        : 24
+#      LUT6                        : 43
+#      MUXCY                       : 43
+#      VCC                         : 1
+#      XORCY                       : 42
+# FlipFlops/Latches                : 287
+#      FD                          : 77
+#      FDC                         : 70
+#      FDCE                        : 60
+#      FDE                         : 43
+#      FDP                         : 32
+#      FDPE                        : 5
+# RAMS                             : 6
+#      RAM16X1D                    : 4
+#      RAM32M                      : 2
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
+# Clock Buffers                    : 5
+#      BUFG                        : 1
+#      BUFGMUX                     : 3
+#      BUFGP                       : 1
+# IO Buffers                       : 8
+#      IBUF                        : 2
+#      IBUFG                       : 1
+#      OBUF                        : 5
+# DCMs                             : 1
+#      DCM_SP                      : 1
+# Others                           : 1
+#      jtagcosim_iface_spartan6    : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9csg225-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             287  out of  11440     2%  
+ Number of Slice LUTs:                  249  out of   5720     4%  
+    Number used as Logic:               232  out of   5720     4%  
+    Number used as Memory:               17  out of   1440     1%  
+       Number used as RAM:               16
+       Number used as SRL:                1
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    386
+   Number with an unused Flip Flop:      99  out of    386    25%  
+   Number with an unused LUT:           137  out of    386    35%  
+   Number of fully used LUT-FF pairs:   150  out of    386    38%  
+   Number of unique control sets:        44
+
+IO Utilization: 
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    160     5%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                5  out of     16    31%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+hwcosim_sys_clk                    | DCM_SP:CLKFX+BUFGMUX   | 110   |
+clk_40mhz                          | BUFGP                  | 184   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.799ns (Maximum Frequency: 208.369MHz)
+   Minimum input arrival time before clock: 5.613ns
+   Maximum output required time after clock: 5.479ns
+   Maximum combinational path delay: 4.820ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_40mhz'
+  Clock period: 1.243ns (frequency: 804.473MHz)
+  Total number of paths / destination ports: 25 / 25
+-------------------------------------------------------------------------
+Offset:              2.486ns (Levels of Logic = 3)
+  Source:            hwcif/hwcosim_dut_inst/rst_out (FF)
+  Destination:       hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_0 (FF)
+  Source Clock:      clk_40mhz rising
+  Destination Clock: hwcosim_sys_clk rising 0.2X
+
+  Data Path: hwcif/hwcosim_dut_inst/rst_out to hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.447   0.845  rst_out (rst_out)
+     end scope: 'hwcif/hwcosim_dut_inst:rst_out'
+     LUT6:I3->O            1   0.205   0.684  hwcif/hwcosim_memory_map_inst/Mmux__n010711 (hwcif/hwcosim_memory_map_inst/Mmux__n01071)
+     LUT3:I1->O            1   0.203   0.000  hwcif/hwcosim_memory_map_inst/Mmux__n010712 (hwcif/hwcosim_memory_map_inst/_n0107<0>)
+     FDE:D                     0.102          hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_0
+    ----------------------------------------
+    Total                      2.486ns (0.957ns logic, 1.529ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'hwcosim_sys_clk'
+  Clock period: 2.169ns (frequency: 461.138MHz)
+  Total number of paths / destination ports: 25 / 25
+-------------------------------------------------------------------------
+Offset:              2.169ns (Levels of Logic = 1)
+  Source:            hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_0 (FF)
+  Destination:       hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22 (RAM)
+  Source Clock:      hwcosim_sys_clk rising 0.2X
+  Destination Clock: clk_40mhz rising
+
+  Data Path: hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_0 to hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              8   0.447   0.802  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_0 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count<0>)
+     INV:I->O              5   0.206   0.714  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/Madd_gc0.count[3]_GND_23_o_add_0_OUT_xor<0>11_INV_0 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rd_pntr_plus1<0>_inv)
+     RAM16X1D:DPRA0            0.000          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22
+    ----------------------------------------
+    Total                      2.169ns (0.653ns logic, 1.516ns route)
+                                       (30.1% logic, 69.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'hwcosim_sys_clk'
+  Clock period: 0.611ns (frequency: 1636.983MHz)
+  Total number of paths / destination ports: 411 / 217
+-------------------------------------------------------------------------
+Delay:               3.054ns (Levels of Logic = 2)
+  Source:            hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_0 (FF)
+  Destination:       hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_7 (FF)
+  Source Clock:      hwcosim_sys_clk rising 0.2X
+  Destination Clock: hwcosim_sys_clk rising 0.2X
+
+  Data Path: hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_0 to hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              8   0.447   0.802  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_0 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count<0>)
+     INV:I->O              5   0.206   0.714  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/Madd_gc0.count[3]_GND_23_o_add_0_OUT_xor<0>11_INV_0 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rd_pntr_plus1<0>_inv)
+     RAM16X1D:DPRA0->DPO    1   0.205   0.579  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/_n0014<7>)
+     FDCE:D                    0.102          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_7
+    ----------------------------------------
+    Total                      3.054ns (0.960ns logic, 2.094ns route)
+                                       (31.4% logic, 68.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_40mhz'
+  Clock period: 4.799ns (frequency: 208.369MHz)
+  Total number of paths / destination ports: 1360 / 327
+-------------------------------------------------------------------------
+Delay:               4.799ns (Levels of Logic = 3)
+  Source:            hwcif/hwcosim_dut_inst/cmdfifo_serial/AT/TxD_state_FSM_FFd1 (FF)
+  Destination:       hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_7 (FF)
+  Source Clock:      clk_40mhz rising
+  Destination Clock: clk_40mhz rising
+
+  Data Path: hwcif/hwcosim_dut_inst/cmdfifo_serial/AT/TxD_state_FSM_FFd1 to hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              35   0.447   1.563  cmdfifo_serial/AT/TxD_state_FSM_FFd1 (cmdfifo_serial/AT/TxD_state_FSM_FFd1)
+     LUT5:I2->O           17   0.205   1.256  cmdfifo_wr_single_rstpot (cmdfifo_wr_single_rstpot)
+     begin scope: 'hwcif/hwcosim_dut_inst/write_fifo:rd_en'
+     LUT3:I0->O            8   0.205   0.802  U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/RAM_REGOUT_EN1 (U0/xst_fifo_generator/gconvfifo.rf/grf.rf/ram_regout_en)
+     FDCE:CE                   0.322          U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_7
+    ----------------------------------------
+    Total                      4.799ns (1.179ns logic, 3.620ns route)
+                                       (24.6% logic, 75.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'hwcosim_sys_clk'
+  Total number of paths / destination ports: 710 / 42
+-------------------------------------------------------------------------
+Offset:              5.613ns (Levels of Logic = 4)
+  Source:            cosim_core_inst:addr<11> (PAD)
+  Destination:       hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_7 (FF)
+  Destination Clock: hwcosim_sys_clk rising 0.2X
+
+  Data Path: cosim_core_inst:addr<11> to hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    jtagcosim_iface_spartan6:addr<11>    1   0.000   0.944  cosim_core_inst (hwcosim_addr_int<11>)
+     LUT6:I0->O            1   0.203   0.924  hwcif/hwcosim_memory_map_inst/_n0120_inv12 (hwcif/hwcosim_memory_map_inst/_n0120_inv12)
+     LUT5:I0->O            2   0.203   0.845  hwcif/hwcosim_memory_map_inst/_n0120_inv14 (hwcif/hwcosim_memory_map_inst/_n0120_inv1)
+     LUT4:I1->O            5   0.205   0.962  hwcif/hwcosim_memory_map_inst/_n0120_inv21 (hwcif/hwcosim_memory_map_inst/_n0120_inv2)
+     LUT4:I0->O            8   0.203   0.802  hwcif/hwcosim_memory_map_inst/_n0136_inv1 (hwcif/hwcosim_memory_map_inst/_n0136_inv)
+     FDE:CE                    0.322          hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_0
+    ----------------------------------------
+    Total                      5.613ns (1.136ns logic, 4.477ns route)
+                                       (20.2% logic, 79.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_40mhz'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              3.458ns (Levels of Logic = 3)
+  Source:            reset_i (PAD)
+  Destination:       hwcif/hwcosim_dut_inst/cmdfifo_serial/cmdfifo_rxe_reg (FF)
+  Destination Clock: clk_40mhz rising
+
+  Data Path: reset_i to hwcif/hwcosim_dut_inst/cmdfifo_serial/cmdfifo_rxe_reg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            17   1.222   1.132  reset_i_IBUF (reset_i_IBUF)
+     begin scope: 'hwcif/hwcosim_dut_inst:reset_i'
+     LUT2:I0->O            1   0.203   0.579  cmdfifo_serial/_n0019_inv1 (cmdfifo_serial/_n0019_inv)
+     FDPE:CE                   0.322          cmdfifo_serial/cmdfifo_rxe_reg
+    ----------------------------------------
+    Total                      3.458ns (1.747ns logic, 1.711ns route)
+                                       (50.5% logic, 49.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_40mhz'
+  Total number of paths / destination ports: 5 / 1
+-------------------------------------------------------------------------
+Offset:              5.479ns (Levels of Logic = 3)
+  Source:            hwcif/hwcosim_dut_inst/cmdfifo_serial/AT/TxD_state_FSM_FFd1 (FF)
+  Destination:       txd (PAD)
+  Source Clock:      clk_40mhz rising
+
+  Data Path: hwcif/hwcosim_dut_inst/cmdfifo_serial/AT/TxD_state_FSM_FFd1 to txd
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              35   0.447   1.679  cmdfifo_serial/AT/TxD_state_FSM_FFd1 (cmdfifo_serial/AT/TxD_state_FSM_FFd1)
+     LUT5:I0->O            1   0.203   0.579  cmdfifo_serial/AT/TxD1 (txd)
+     end scope: 'hwcif/hwcosim_dut_inst:txd'
+     OBUF:I->O                 2.571          txd_OBUF (txd)
+    ----------------------------------------
+    Total                      5.479ns (3.221ns logic, 2.258ns route)
+                                       (58.8% logic, 41.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'hwcosim_sys_clk'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              3.668ns (Levels of Logic = 2)
+  Source:            hwcif/hwcosim_memory_map_inst/int_o_tb_led (FF)
+  Destination:       GPIO_LED1 (PAD)
+  Source Clock:      hwcosim_sys_clk rising 0.2X
+
+  Data Path: hwcif/hwcosim_memory_map_inst/int_o_tb_led to GPIO_LED1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.447   0.650  hwcif/hwcosim_memory_map_inst/int_o_tb_led (hwcif/hwcosim_memory_map_inst/int_o_tb_led)
+     begin scope: 'hwcif/hwcosim_dut_inst:tb_led'
+     end scope: 'hwcif/hwcosim_dut_inst:GPIO_LED1'
+     OBUF:I->O                 2.571          GPIO_LED1_OBUF (GPIO_LED1)
+    ----------------------------------------
+    Total                      3.668ns (3.018ns logic, 0.650ns route)
+                                       (82.3% logic, 17.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 72 / 16
+-------------------------------------------------------------------------
+Delay:               4.820ns (Levels of Logic = 3)
+  Source:            reset_i (PAD)
+  Destination:       GPIO_LED2 (PAD)
+
+  Data Path: reset_i to GPIO_LED2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            17   1.222   1.027  reset_i_IBUF (reset_i_IBUF)
+     begin scope: 'hwcif/hwcosim_dut_inst:reset_i'
+     end scope: 'hwcif/hwcosim_dut_inst:GPIO_LED2'
+     OBUF:I->O                 2.571          GPIO_LED2_OBUF (GPIO_LED2)
+    ----------------------------------------
+    Total                      4.820ns (3.793ns logic, 1.027ns route)
+                                       (78.7% logic, 21.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_40mhz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_40mhz      |    4.799|         |         |         |
+hwcosim_sys_clk|    2.169|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock hwcosim_sys_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_40mhz      |    2.486|         |         |         |
+hwcosim_sys_clk|    3.054|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.99 secs
+ 
+--> 
+
+Total memory usage is 259320 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   38 (   0 filtered)
+Number of infos    :   35 (   0 filtered)
+

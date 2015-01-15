@@ -1,0 +1,18 @@
+# Output products list for <test>
+_xmsgs\pn_parser.xmsgs
+demo_tb\tb_test.vhd
+test.asy
+test.gise
+test.ngc
+test.sym
+test.v
+test.veo
+test.xco
+test.xise
+test\cmodel\floating_point_v6_1_bitacc_cmodel_lin.zip
+test\cmodel\floating_point_v6_1_bitacc_cmodel_lin64.zip
+test\cmodel\floating_point_v6_1_bitacc_cmodel_nt.zip
+test\cmodel\floating_point_v6_1_bitacc_cmodel_nt64.zip
+test_flist.txt
+test_readme.txt
+test_xmdf.tcl

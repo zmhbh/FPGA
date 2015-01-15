@@ -1,0 +1,1 @@
+xst -ifn xst_lx9board_main.scr

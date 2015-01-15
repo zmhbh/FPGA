@@ -1,0 +1,9 @@
+INFO:HWCoSim - Processing custom design constraints file 'C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/Avt_S6LX9_MicroBoard_UCF_110804.ucf'
+INFO:HWCoSim - Processing module 'jtag'
+INFO:HWCoSim - Extracting hardware co-simulation files
+INFO:HWCoSim - Synthesizing design under test using XST
+INFO:HWCoSim - Merging design under test netlists
+INFO:HWCoSim - Synthesizing hardware co-simulation top-level
+INFO:HWCoSim - Implementing hardware co-simulation top-level through NGDBuild, MAP and PAR
+INFO:HWCoSim - Checking PAR report for timing violations
+INFO:HWCoSim - Exporting hardware co-simulation bitstream and project files

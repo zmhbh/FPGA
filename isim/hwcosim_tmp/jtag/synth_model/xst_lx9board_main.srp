@@ -1,0 +1,581 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Reading constraint file lx9board_main.xcf.
+XCF parsing done.
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input Format                       : MIXED
+Input File Name                    : "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/hwcosim_xst.prj"
+Synthesis Constraint File          : "lx9board_main.xcf"
+
+---- Target Parameters
+Output Format                      : NGC
+Output File Name                   : "lx9board_main"
+Target Device                      : xc6slx9
+
+---- Source Options
+Top Module Name                    : lx9board_main
+Generics, Parameters               : { }
+
+---- Target Options
+Add IO Buffers                     : NO
+
+---- General Options
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Cross Clock Analysis               : YES
+Global Optimization                : AllClockNets
+Hierarchy Separator                : /
+Optimization Effort                : 2
+Optimization Goal                  : SPEED
+Write Timing Constraints           : YES
+
+---- Other Options
+report_timing_constraint_problems  : warning
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v" into library work
+Parsing module <async_transmitter>.
+Parsing module <async_receiver>.
+Parsing module <BaudTickGen>.
+Analyzing Verilog file "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/ipcore_dir/cross_clock.v" into library work
+Parsing module <cross_clock>.
+Analyzing Verilog file "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/lx9board_main.v" into library work
+Parsing module <lx9board_main>.
+Analyzing Verilog file "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/serial_interface.v" into library work
+Parsing module <serial_reg_iface>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <lx9board_main>.
+
+Elaborating module <cross_clock>.
+WARNING:HDLCompiler:1499 - "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/ipcore_dir/cross_clock.v" Line 39: Empty module <cross_clock> remains a black box.
+WARNING:HDLCompiler:1016 - "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/serial_interface.v" Line 74: Port RxD_idle is not connected to this instance
+
+Elaborating module <serial_reg_iface>.
+
+Elaborating module <async_transmitter>.
+
+Elaborating module <BaudTickGen(ClkFrequency=40000000,Baud=9600)>.
+
+Elaborating module <async_receiver>.
+
+Elaborating module <BaudTickGen(ClkFrequency=40000000,Baud=9600,Oversampling=8)>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <lx9board_main>.
+    Related source file is "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/lx9board_main.v".
+INFO:Xst:3210 - "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/lx9board_main.v" line 78: Output port <full> of the instance <read_fifo> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cmdfifo_wr_single>.
+    Found 1-bit register for signal <cmdfifo_rd_single>.
+    Found 1-bit register for signal <cmdfifo_rd_single_delay>.
+    Found 1-bit register for signal <rst_out>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <lx9board_main> synthesized.
+
+Synthesizing Unit <serial_reg_iface>.
+    Related source file is "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/serial_interface.v".
+INFO:Xst:3210 - "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/serial_interface.v" line 74: Output port <RxD_idle> of the instance <AR> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/serial_interface.v" line 74: Output port <RxD_endofpacket> of the instance <AR> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <cmdfifo_rxe_reg>.
+    Found 8-bit register for signal <dataout>.
+    Summary:
+	inferred   9 D-type flip-flop(s).
+Unit <serial_reg_iface> synthesized.
+
+Synthesizing Unit <async_transmitter>.
+    Related source file is "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v".
+        ClkFrequency = 40000000
+        Baud = 9600
+    Found 4-bit register for signal <TxD_state>.
+    Found 8-bit register for signal <TxD_shift>.
+    Found finite state machine <FSM_0> for signal <TxD_state>.
+    -----------------------------------------------------------------------
+    | States             | 12                                             |
+    | Transitions        | 24                                             |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <async_transmitter> synthesized.
+
+Synthesizing Unit <BaudTickGen_1>.
+    Related source file is "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v".
+        ClkFrequency = 40000000
+        Baud = 9600
+        Oversampling = 1
+    Found 22-bit register for signal <Acc>.
+    Found 22-bit adder for signal <n0007> created at line 171.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <BaudTickGen_1> synthesized.
+
+Synthesizing Unit <async_receiver>.
+    Related source file is "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v".
+        ClkFrequency = 40000000
+        Baud = 9600
+        Oversampling = 8
+    Found 2-bit register for signal <Filter_cnt>.
+    Found 1-bit register for signal <RxD_bit>.
+    Found 3-bit register for signal <OversamplingCnt>.
+    Found 4-bit register for signal <RxD_state>.
+    Found 8-bit register for signal <RxD_data>.
+    Found 1-bit register for signal <RxD_data_ready>.
+    Found 6-bit register for signal <GapCnt>.
+    Found 1-bit register for signal <RxD_endofpacket>.
+    Found 2-bit register for signal <RxD_sync>.
+    Found finite state machine <FSM_1> for signal <RxD_state>.
+    -----------------------------------------------------------------------
+    | States             | 11                                             |
+    | Transitions        | 32                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 2-bit subtractor for signal <Filter_cnt[1]_GND_6_o_sub_10_OUT> created at line 108.
+    Found 2-bit adder for signal <Filter_cnt[1]_GND_6_o_add_6_OUT> created at line 106.
+    Found 3-bit adder for signal <OversamplingCnt[2]_GND_6_o_add_18_OUT> created at line 119.
+    Found 6-bit adder for signal <GapCnt[5]_GND_6_o_add_44_OUT> created at line 151.
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  24 D-type flip-flop(s).
+	inferred   1 Finite State Machine(s).
+Unit <async_receiver> synthesized.
+
+Synthesizing Unit <BaudTickGen_2>.
+    Related source file is "C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v".
+        ClkFrequency = 40000000
+        Baud = 9600
+        Oversampling = 8
+    Found 22-bit register for signal <Acc>.
+    Found 22-bit adder for signal <GND_7_o_BUS_0793_mux_2_OUT> created at line 171.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+Unit <BaudTickGen_2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 2-bit addsub                                          : 1
+ 22-bit adder                                          : 2
+ 3-bit adder                                           : 1
+ 6-bit adder                                           : 1
+# Registers                                            : 17
+ 1-bit register                                        : 8
+ 2-bit register                                        : 2
+ 22-bit register                                       : 2
+ 3-bit register                                        : 1
+ 6-bit register                                        : 1
+ 8-bit register                                        : 3
+# Multiplexers                                         : 2
+ 22-bit 2-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <async_receiver>.
+The following registers are absorbed into counter <OversamplingCnt>: 1 register on signal <OversamplingCnt>.
+The following registers are absorbed into counter <Filter_cnt>: 1 register on signal <Filter_cnt>.
+The following registers are absorbed into counter <GapCnt>: 1 register on signal <GapCnt>.
+Unit <async_receiver> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 22-bit adder                                          : 2
+# Counters                                             : 3
+ 2-bit updown counter                                  : 1
+ 3-bit up counter                                      : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 78
+ Flip-Flops                                            : 78
+# Multiplexers                                         : 2
+ 22-bit 2-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <cmdfifo_serial/AT/FSM_0> on signal <TxD_state[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0100  | 0100
+ 0011  | 0011
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+ 1011  | 1011
+ 1100  | 1100
+ 1101  | 1101
+ 1110  | 1110
+ 1111  | 1111
+ 0010  | 0010
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <cmdfifo_serial/AR/FSM_1> on signal <RxD_state[1:4]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 0000
+ 0001  | 0001
+ 1000  | 1000
+ 1001  | 1001
+ 1010  | 1010
+ 1011  | 1011
+ 1100  | 1100
+ 1101  | 1101
+ 1110  | 1110
+ 1111  | 1111
+ 0010  | 0010
+-------------------
+
+Optimizing unit <BaudTickGen_2> ...
+
+Optimizing unit <lx9board_main> ...
+
+Optimizing unit <serial_reg_iface> ...
+
+Optimizing unit <async_transmitter> ...
+
+Optimizing unit <BaudTickGen_1> ...
+
+Optimizing unit <async_receiver> ...
+WARNING:Xst:2677 - Node <cmdfifo_serial/AR/GapCnt_5> of sequential type is unconnected in block <lx9board_main>.
+WARNING:Xst:2677 - Node <cmdfifo_serial/AR/GapCnt_4> of sequential type is unconnected in block <lx9board_main>.
+WARNING:Xst:2677 - Node <cmdfifo_serial/AR/GapCnt_3> of sequential type is unconnected in block <lx9board_main>.
+WARNING:Xst:2677 - Node <cmdfifo_serial/AR/GapCnt_2> of sequential type is unconnected in block <lx9board_main>.
+WARNING:Xst:2677 - Node <cmdfifo_serial/AR/GapCnt_1> of sequential type is unconnected in block <lx9board_main>.
+WARNING:Xst:2677 - Node <cmdfifo_serial/AR/GapCnt_0> of sequential type is unconnected in block <lx9board_main>.
+WARNING:Xst:2677 - Node <cmdfifo_serial/AR/RxD_endofpacket> of sequential type is unconnected in block <lx9board_main>.
+
+Mapping all equations...
+Annotating constraints using XCF file 'lx9board_main.xcf'
+XCF parsing done.
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block lx9board_main, actual ratio is 2.
+FlipFlop cmdfifo_serial/AT/TxD_state_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop cmdfifo_serial/AT/TxD_state_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop cmdfifo_serial/AT/TxD_state_FSM_FFd3 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <lx9board_main> :
+	Found 2-bit shift register for signal <cmdfifo_serial/AR/RxD_sync_1>.
+Unit <lx9board_main> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 92
+ Flip-Flops                                            : 92
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : lx9board_main.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 187
+#      GND                         : 1
+#      INV                         : 21
+#      LUT1                        : 24
+#      LUT2                        : 2
+#      LUT3                        : 4
+#      LUT4                        : 32
+#      LUT5                        : 8
+#      LUT6                        : 9
+#      MUXCY                       : 43
+#      VCC                         : 1
+#      XORCY                       : 42
+# FlipFlops/Latches                : 93
+#      FD                          : 65
+#      FDE                         : 27
+#      FDPE                        : 1
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
+# Others                           : 2
+#      cross_clock                 : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9csg225-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              93  out of  11440     0%  
+ Number of Slice LUTs:                  101  out of   5720     1%  
+    Number used as Logic:               100  out of   5720     1%  
+    Number used as Memory:                1  out of   1440     0%  
+       Number used as SRL:                1
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    122
+   Number with an unused Flip Flop:      29  out of    122    23%  
+   Number with an unused LUT:            21  out of    122    17%  
+   Number of fully used LUT-FF pairs:    72  out of    122    59%  
+   Number of unique control sets:         7
+
+IO Utilization: 
+ Number of IOs:                          32
+ Number of bonded IOBs:                   0  out of    160     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)        | Load  |
+-----------------------------------+------------------------------+-------+
+clk_40mhz                          | NONE(cmdfifo_rd_single_delay)| 94    |
+-----------------------------------+------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.832ns (Maximum Frequency: 353.145MHz)
+   Minimum input arrival time before clock: 1.249ns
+   Maximum output required time after clock: 2.794ns
+   Maximum combinational path delay: 1.706ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_40mhz'
+  Clock period: 2.832ns (frequency: 353.145MHz)
+  Total number of paths / destination ports: 842 / 122
+-------------------------------------------------------------------------
+Delay:               2.832ns (Levels of Logic = 23)
+  Source:            cmdfifo_serial/AT/tickgen/Acc_0 (FF)
+  Destination:       cmdfifo_serial/AT/tickgen/Acc_20 (FF)
+  Source Clock:      clk_40mhz rising
+  Destination Clock: clk_40mhz rising
+
+  Data Path: cmdfifo_serial/AT/tickgen/Acc_0 to cmdfifo_serial/AT/tickgen/Acc_20
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               1   0.447   0.579  cmdfifo_serial/AT/tickgen/Acc_0 (cmdfifo_serial/AT/tickgen/Acc_0)
+     INV:I->O              1   0.206   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_lut<0>_INV_0 (cmdfifo_serial/AT/tickgen/Madd_n0007_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<0> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<1> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<2> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<3> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<4> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<5> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<6> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<7> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<8> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<9> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<10> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<11> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<12> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<13> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<14> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<15> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<16> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<17> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<18> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  cmdfifo_serial/AT/tickgen/Madd_n0007_cy<19> (cmdfifo_serial/AT/tickgen/Madd_n0007_cy<19>)
+     XORCY:CI->O           1   0.180   0.580  cmdfifo_serial/AT/tickgen/Madd_n0007_xor<20> (cmdfifo_serial/AT/tickgen/n0007<20>)
+     LUT4:I3->O            1   0.205   0.000  cmdfifo_serial/AT/tickgen/Mmux_GND_5_o_BUS_0793_mux_2_OUT131 (cmdfifo_serial/AT/tickgen/GND_5_o_BUS_0793_mux_2_OUT<20>)
+     FD:D                      0.102          cmdfifo_serial/AT/tickgen/Acc_20
+    ----------------------------------------
+    Total                      2.832ns (1.673ns logic, 1.159ns route)
+                                       (59.1% logic, 40.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_40mhz'
+  Total number of paths / destination ports: 14 / 13
+-------------------------------------------------------------------------
+Offset:              1.249ns (Levels of Logic = 1)
+  Source:            write_fifo:dout<6> (PAD)
+  Destination:       cmdfifo_serial/AT/TxD_shift_6 (FF)
+  Destination Clock: clk_40mhz rising
+
+  Data Path: write_fifo:dout<6> to cmdfifo_serial/AT/TxD_shift_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    cross_clock:dout<6>    1   0.000   0.944  write_fifo (cmdfifo_txdata_clk<6>)
+     LUT6:I0->O            1   0.203   0.000  cmdfifo_serial/AT/TxD_shift[7]_TxD_data[7]_mux_3_OUT<6>1 (cmdfifo_serial/AT/TxD_shift[7]_TxD_data[7]_mux_3_OUT<6>)
+     FDE:D                     0.102          cmdfifo_serial/AT/TxD_shift_6
+    ----------------------------------------
+    Total                      1.249ns (0.305ns logic, 0.944ns route)
+                                       (24.4% logic, 75.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_40mhz'
+  Total number of paths / destination ports: 19 / 12
+-------------------------------------------------------------------------
+Offset:              2.794ns (Levels of Logic = 1)
+  Source:            cmdfifo_serial/AT/TxD_state_FSM_FFd1 (FF)
+  Destination:       write_fifo:rd_en (PAD)
+  Source Clock:      clk_40mhz rising
+
+  Data Path: cmdfifo_serial/AT/TxD_state_FSM_FFd1 to write_fifo:rd_en
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              35   0.447   1.563  cmdfifo_serial/AT/TxD_state_FSM_FFd1 (cmdfifo_serial/AT/TxD_state_FSM_FFd1)
+     LUT5:I2->O            1   0.205   0.579  cmdfifo_wr_single_rstpot (cmdfifo_wr_single_rstpot)
+    cross_clock:rd_en          0.000          write_fifo
+    ----------------------------------------
+    Total                      2.794ns (0.652ns logic, 2.142ns route)
+                                       (23.3% logic, 76.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 31 / 31
+-------------------------------------------------------------------------
+Delay:               1.706ns (Levels of Logic = 1)
+  Source:            write_fifo:empty (PAD)
+  Destination:       write_fifo:rd_en (PAD)
+
+  Data Path: write_fifo:empty to write_fifo:rd_en
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    cross_clock:empty      1   0.000   0.924  write_fifo (empty)
+     LUT5:I0->O            1   0.203   0.579  cmdfifo_wr_single_rstpot (cmdfifo_wr_single_rstpot)
+    cross_clock:rd_en          0.000          write_fifo
+    ----------------------------------------
+    Total                      1.706ns (0.203ns logic, 1.503ns route)
+                                       (11.9% logic, 88.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_40mhz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_40mhz      |    2.832|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.87 secs
+ 
+--> 
+
+Total memory usage is 256824 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

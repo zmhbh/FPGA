@@ -1,0 +1,6 @@
+verilog isim_temp "async.v"
+verilog isim_temp "serial_interface.v"
+verilog isim_temp "ipcore_dir/cross_clock.v"
+verilog isim_temp "lx9board_main.v"
+verilog isim_temp "tb_lx9board_main.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

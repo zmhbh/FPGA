@@ -1,0 +1,33 @@
+Release 14.7 ngcbuild P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngcbuild.exe -sd
+C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/isim/hwcosim_tmp/jtag/synth_model -sd
+C:/Users/hjy/Desktop/FPGA-HJY/serial_ise -sd
+C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/ipcore_dir lx9board_main
+lx9board_main.ngc
+
+Reading NGO file
+"C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/isim/hwcosim_tmp/jtag/synth_model/lx9b
+oard_main.ngc" ...
+Loading design module
+"C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/ipcore_dir/cross_clock.ngc"...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGCBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 161628 kilobytes
+
+Writing NGC file "lx9board_main.ngc" ...
+Total REAL time to NGCBUILD completion:  3 sec
+Total CPU time to NGCBUILD completion:   3 sec
+
+Writing NGCBUILD log file "lx9board_main.blc"...

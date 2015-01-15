@@ -1,0 +1,665 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Nov 26 08:19:12 2014
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "3.3";
+COMP "rxd" LOCATE = SITE "R7" LEVEL 1;
+COMP "txd" LOCATE = SITE "T7" LEVEL 1;
+COMP "clk_40mhz" LOCATE = SITE "V10" LEVEL 1;
+COMP "reset_i" LOCATE = SITE "V4" LEVEL 1;
+COMP "hwcosim_sys_clk" LOCATE = SITE "C10" LEVEL 1;
+COMP "GPIO_LED1" LOCATE = SITE "P4" LEVEL 1;
+COMP "GPIO_LED2" LOCATE = SITE "L6" LEVEL 1;
+COMP "GPIO_LED3" LOCATE = SITE "F5" LEVEL 1;
+COMP "GPIO_LED4" LOCATE = SITE "C2" LEVEL 1;
+PIN
+        cosim_core_inst/serial_iface/dout_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM_pins<29>
+        = BEL
+        "cosim_core_inst/serial_iface/dout_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM"
+        PINNAME CLKB;
+PIN
+        cosim_core_inst/serial_iface/din_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM_pins<28>
+        = BEL
+        "cosim_core_inst/serial_iface/din_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM"
+        PINNAME CLKA;
+TIMEGRP J_CLK = BEL "cosim_core_inst/serial_iface/dout_fifo/read_addr[5]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addr[6]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addr[7]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addr[8]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addr[9]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addr[10]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addr[11]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addr[12]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addr[13]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/downcount_r[0]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/downcount_r[1]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/downcount_r[2]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/downcount_r[3]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/downcount_r[4]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/empty1" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_nextgray[5]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_nextgray[6]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_nextgray[7]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_nextgray[8]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_nextgray[9]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_nextgray[10]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_nextgray[11]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_nextgray[12]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_nextgray[13]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addrgray[5]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addrgray[6]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addrgray[7]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addrgray[8]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addrgray[9]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addrgray[10]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addrgray[11]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addrgray[12]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_addrgray[13]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/bram_enb_pipe" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/rd_reset" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/rd_reset_resync" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/next_downcount_r[3]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/next_downcount_r[4]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[2]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[3]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[4]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[5]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[6]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[7]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[8]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[9]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[10]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[11]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[12]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[13]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/next_downcount_r[0]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/next_downcount_r[1]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/next_downcount_r[2]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[0]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/read_next[1]" PIN
+        "cosim_core_inst/serial_iface/dout_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM_pins<29>"
+        BEL "cosim_core_inst/serial_iface/din_fifo/full" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[1]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[2]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[3]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[4]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[5]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[6]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[7]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[8]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[9]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[10]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[11]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[12]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nxtnxtgray[13]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[0]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[1]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[2]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[3]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[4]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[5]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[6]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[7]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[8]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[9]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[10]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[11]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addr[12]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[0]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[1]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[2]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[3]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[4]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[5]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[6]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[7]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[8]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[9]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[10]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[11]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[12]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_next[13]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[0]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[1]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[2]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[3]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[4]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[5]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[6]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[7]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[8]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[9]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[10]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[11]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[12]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_nextgray[13]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addrgray[5]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addrgray[6]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addrgray[7]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addrgray[8]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addrgray[9]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addrgray[10]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addrgray[11]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addrgray[12]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/write_addrgray[13]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/wr_reset" BEL
+        "cosim_core_inst/serial_iface/din_fifo/wr_reset_resync" BEL
+        "cosim_core_inst/serial_iface/din_fifo/downcount_w[0]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/downcount_w[1]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/downcount_w[2]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/downcount_w[3]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/downcount_w[4]" PIN
+        "cosim_core_inst/serial_iface/din_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM_pins<28>"
+        BEL "cosim_core_inst/serial_iface/sync_word_sr_0" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_1" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_2" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_3" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_4" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_5" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_6" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_7" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_8" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_9" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_10" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_11" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_12" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_13" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_14" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_15" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_16" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_17" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_18" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_19" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_20" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_21" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_22" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_23" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_24" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_25" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_26" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_27" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_28" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_29" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_30" BEL
+        "cosim_core_inst/serial_iface/din_fifo_we";
+PIN
+        cosim_core_inst/serial_iface/dout_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM_pins<28>
+        = BEL
+        "cosim_core_inst/serial_iface/dout_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM"
+        PINNAME CLKA;
+PIN
+        cosim_core_inst/serial_iface/din_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM_pins<29>
+        = BEL
+        "cosim_core_inst/serial_iface/din_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM"
+        PINNAME CLKB;
+TIMEGRP hwcosim_clkgen_dcm_clkfx = BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nxtnxtgray[1]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nxtnxtgray[2]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nxtnxtgray[3]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nxtnxtgray[4]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nxtnxtgray[5]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nxtnxtgray[6]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nxtnxtgray[7]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nxtnxtgray[8]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addr[0]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addr[1]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addr[2]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addr[3]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addr[4]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addr[5]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addr[6]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addr[7]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_next[0]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_next[1]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_next[2]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_next[3]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_next[4]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_next[5]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_next[6]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_next[7]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_next[8]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/full" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/almost_full" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nextgray[0]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nextgray[1]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nextgray[2]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nextgray[3]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nextgray[4]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nextgray[5]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nextgray[6]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nextgray[7]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_nextgray[8]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addrgray[0]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addrgray[1]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addrgray[2]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addrgray[3]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addrgray[4]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addrgray[5]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addrgray[6]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addrgray[7]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/write_addrgray[8]" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/wr_reset" BEL
+        "cosim_core_inst/serial_iface/dout_fifo/wr_reset_resync" PIN
+        "cosim_core_inst/serial_iface/dout_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM_pins<28>"
+        BEL "cosim_core_inst/serial_iface/din_fifo/read_addr[0]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addr[1]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addr[2]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addr[3]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addr[4]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addr[5]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addr[6]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addr[7]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addr[8]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/empty1" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addrgray_ext" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_nextgray[0]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_nextgray[1]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_nextgray[2]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_nextgray[3]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_nextgray[4]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_nextgray[5]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_nextgray[6]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_nextgray[7]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_nextgray[8]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addrgray[0]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addrgray[1]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addrgray[2]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addrgray[3]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addrgray[4]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addrgray[5]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addrgray[6]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addrgray[7]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_addrgray[8]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_nextgray_ext" BEL
+        "cosim_core_inst/serial_iface/din_fifo/bram_enb_pipe" BEL
+        "cosim_core_inst/serial_iface/din_fifo/rd_reset" BEL
+        "cosim_core_inst/serial_iface/din_fifo/rd_reset_resync" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_next[0]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_next[1]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_next[2]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_next[3]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_next[4]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_next[5]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_next[6]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_next[7]" BEL
+        "cosim_core_inst/serial_iface/din_fifo/read_next[8]" PIN
+        "cosim_core_inst/serial_iface/din_fifo/genblk1.RAM.blockram/genblk0.MEM[0].generate_v4ramb16.BRAM_pins<29>"
+        BEL "cosim_core_inst/serial_iface/cmd_proc/addr_i_23" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_22" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_21" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_20" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_19" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_18" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_17" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_16" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_15" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_14" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_13" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_12" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_11" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_10" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_9" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_8" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_7" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_6" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_5" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_4" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_3" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_2" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_1" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/addr_i_0" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_23" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_22" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_21" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_20" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_19" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_18" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_17" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_16" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_15" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_14" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_13" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_12" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_11" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_10" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_9" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_8" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_7" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_6" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_5" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_4" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_3" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_2" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_1" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_words_0" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/current_state_FSM_FFd2" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/current_state_FSM_FFd1" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_23" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_22" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_21" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_20" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_19" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_18" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_17" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_16" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_15" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_14" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_13" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_12" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_11" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_10" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_9" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_8" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_7" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_6" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_5" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_4" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_3" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_2" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_1" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/pulse_count_0" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/dout_fifo_we" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_23" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_22" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_21" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_20" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_19" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_18" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_17" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_16" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_15" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_14" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_13" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_12" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_11" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_10" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_9" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_8" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_7" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_6" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_5" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_4" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_3" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_2" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_1" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/n_clk_pulses_0" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/bank_sel_7" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/bank_sel_6" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/bank_sel_5" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/bank_sel_4" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/bank_sel_3" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/bank_sel_2" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/bank_sel_1" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/bank_sel_0" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/data_valid" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/sstep_clk_i" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/seq_addr" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/cosim_clk_sel" BEL
+        "cosim_core_inst/serial_iface/cmd_proc/mode" BEL "bufgmux_comp2" BEL
+        "bufgmux_comp1" BEL "bufgce_hwcosim_clkgen_dcm_clkfx" BEL
+        "hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_7" BEL
+        "hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_6" BEL
+        "hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_5" BEL
+        "hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_4" BEL
+        "hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_3" BEL
+        "hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_2" BEL
+        "hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_1" BEL
+        "hwcif/hwcosim_memory_map_inst/hwcosim_mm_data_out_bank0_0" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_7" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_6" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_5" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_4" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_3" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_2" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_1" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_txdata_0" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_wr" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_cmdfifo_rd" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_tb_led" BEL
+        "hwcif/hwcosim_memory_map_inst/int_o_rst_out_ack" BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.rst_d3"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.rst_d2"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.rst_d1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_7"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_6"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_5"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_4"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/dout_i_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_7"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_6"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_5"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_4"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/dout_i_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/curr_fwft_state_FSM_FFd2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/curr_fwft_state_FSM_FFd1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_3"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_2"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_1"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/read_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_0"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22/SP"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM22/DP"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM21/SP"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM21/DP"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMA_D1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMA"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB_D1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMB"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMC_D1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMC"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD_D1"
+        BEL
+        "hwcif/hwcosim_dut_inst/write_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gdm.dm/Mram_RAM1_RAMD";
+TIMEGRP U_CLK = BEL "cosim_core_inst/serial_iface/sync_word_sr_0" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_1" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_2" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_3" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_4" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_5" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_6" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_7" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_8" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_9" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_10" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_11" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_12" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_13" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_14" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_15" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_16" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_17" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_18" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_19" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_20" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_21" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_22" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_23" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_24" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_25" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_26" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_27" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_28" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_29" BEL
+        "cosim_core_inst/serial_iface/sync_word_sr_30" BEL
+        "cosim_core_inst/serial_iface/din_fifo_we";
+TIMEGRP clk_40mhz = BEL "clk_40mhz";
+PIN SP6_BUFIO_INSERT_ML_BUFIO2_1_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_1"
+        PINNAME DIVCLK;
+PIN hwcosim_clkgen_dcm_pins<3> = BEL "hwcosim_clkgen_dcm" PINNAME CLKIN;
+TIMEGRP T_hwcosim_sys_clk = PIN "SP6_BUFIO_INSERT_ML_BUFIO2_1_pins<0>" PIN
+        "hwcosim_clkgen_dcm_pins<3>";
+NET "cosim_core_inst/drck" PERIOD = 30 ns HIGH 50%;
+TS_J_TO_U = MAXDELAY FROM TIMEGRP "J_CLK" TO TIMEGRP "U_CLK" 15 ns;
+TS_hwcosim_sys_clk = PERIOD TIMEGRP "T_hwcosim_sys_clk" 10 ns HIGH 50%;
+TS_USER_CLOCK = PERIOD TIMEGRP "clk_40mhz" 40 MHz HIGH 50%;
+TS_hwcosim_clkgen_dcm_clkfx = PERIOD TIMEGRP "hwcosim_clkgen_dcm_clkfx"
+        TS_hwcosim_sys_clk / 0.2 HIGH 50%;
+PIN reset_i_pins<0> = BEL "reset_i" PINNAME PAD;
+PIN "reset_i_pins<0>" TIG;
+SCHEMATIC END;
+

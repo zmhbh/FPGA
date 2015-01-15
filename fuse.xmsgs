@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="1330" delta="unknown" >"C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v" Line 166: Function <arg fmt="%s" index="1">log2</arg> has no return value assignment
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1330" delta="unknown" >"C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v" Line 116: Function <arg fmt="%s" index="1">log2</arg> has no return value assignment
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/tb_lx9board_main.v" Line 62: Port <arg fmt="%s" index="1">clk_40mhz</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/serial_interface.v" Line 74: Port <arg fmt="%s" index="1">RxD_idle</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1330" delta="unknown" >"C:/Users/hjy/Desktop/FPGA-HJY/serial_ise/async.v" Line 166: Function <arg fmt="%s" index="1">log2</arg> has no return value assignment
+</msg>
+
+</messages>
+

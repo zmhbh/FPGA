@@ -1,0 +1,8 @@
+INTSTYLE=xflow
+INFILE=C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\xflow\hwcosim_top.ncd
+OUTFILE=C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\xflow\hwcosim_top.bit
+FAMILY=Spartan6
+PART=xc6slx9-2csg324
+WORKINGDIR=C:\Users\hjy\Desktop\FPGA-HJY\serial_ise\isim\hwcosim_tmp\jtag\xflow
+LICENSE=WebPack
+USER_INFO=210959518_1777503678_210590925_763

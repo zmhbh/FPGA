@@ -1,0 +1,30 @@
+Command line:
+   lx9example_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  2320
+     -hwcosim
+
+Wed Nov 26 08:19:41 2014
+
+
+ Elaboration Time: 0.0624 sec
+
+ Current Memory Usage: 694.161 Meg
+
+ Total Signals          : 34
+ Total Nets             : 45
+ Total Signal Drivers   : 20
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 22
+ Total Traceable Variables  : 44
+ Total Scalar Nets and Variables : 237
+Total Line Count : 97
+
+ Total Simulation Time: 67.2832 sec
+
+ Current Memory Usage: 1187.02 Meg
+
+Wed Nov 26 08:23:11 2014
+
